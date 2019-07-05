@@ -4,27 +4,11 @@ import UIKit
 
 
 /**
- This view demonstrates a problem, that a subview of a subview of the view does not have the expected bounds in
- layoutSubviews().
+ vacawama answered the question here: https://stackoverflow.com/a/56901733/895108
  
- The structure is:
- 
-     DemoView
-         firstLevelSubview
-             secondLevelSubview
- 
- When layoutSubviews() is called, the view and the firstLevelSubview have the expected bounds, but the
- secondLevelSubview's bounds are 0. See the printed values in the console.
- 
- Am I doing something wrong here?
- 
- Is this expected behavior?
- 
- - Note:
-     The structure is an abstraction of a real case. To avoid the problem, secondLevelSubview could be added as a
-     first level subview to DemoView. Though, this is something, that is not feasible in the real case.
+ What was missing was to call layoutIfNeeded() after setting up the constraints of the subviews.
  */
-class DemoView: UIView {
+class DemoViewAnswer: UIView {
     
     // MARK: - Initializers
     
@@ -56,7 +40,7 @@ class DemoView: UIView {
         
         print("bounds.width: \(bounds.width), contentView.bounds.width: \(firstLevelSubview.bounds.width), backgroundView.bounds.width: \(secondLevelSubview.bounds.width)")
     }
-
+    
     
     
     
@@ -87,9 +71,9 @@ class DemoView: UIView {
         secondLevelSubview.centerXAnchor.constraint(equalTo: firstLevelSubview.centerXAnchor).isActive = true
         secondLevelSubview.centerYAnchor.constraint(equalTo: firstLevelSubview.centerYAnchor).isActive = true
         
-        updateConstraintsIfNeeded()
+        layoutIfNeeded()
     }
-
+    
 }
 
 

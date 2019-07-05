@@ -19,17 +19,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZyW-BX-3ig" customClass="DemoView" customModule="BoundsAreZero" customModuleProvider="target">
-                                <rect key="frame" x="175" y="416" width="64" height="64"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="175" y="52" width="64" height="64"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="WYo-AG-eKc"/>
                                     <constraint firstAttribute="width" constant="64" id="dg4-zO-Yjw"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hXU-Fe-54i" customClass="DemoViewAnswer" customModule="BoundsAreZero" customModuleProvider="target">
+                                <rect key="frame" x="175" y="148" width="64" height="64"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="dVu-cw-VPz"/>
+                                    <constraint firstAttribute="width" constant="64" id="tOx-Ld-b8G"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ZyW-BX-3ig" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="R3O-EI-1yx"/>
+                            <constraint firstItem="hXU-Fe-54i" firstAttribute="top" secondItem="ZyW-BX-3ig" secondAttribute="bottom" constant="32" id="2rP-vh-pu0"/>
+                            <constraint firstItem="hXU-Fe-54i" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="821-ie-gxP"/>
+                            <constraint firstItem="ZyW-BX-3ig" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="bGP-91-L8H"/>
                             <constraint firstItem="ZyW-BX-3ig" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tnY-70-o2T"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
