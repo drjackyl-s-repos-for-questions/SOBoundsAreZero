@@ -6,7 +6,7 @@ import UIKit
 /**
  vacawama answered the question here: https://stackoverflow.com/a/56901733/895108
  
- What was missing was to call layoutIfNeeded() after setting up the constraints of the subviews.
+ What was missing was to call layoutIfNeeded() after setting up the constraints and using the the bounds of the subview.
  */
 class DemoViewAnswer: UIView {
     
@@ -34,6 +34,8 @@ class DemoViewAnswer: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
+        secondLevelSubview.layoutIfNeeded()
         
         firstLevelSubview.layer.cornerRadius = bounds.width / 2
         secondLevelSubview.layer.cornerRadius = secondLevelSubview.bounds.width / 2
@@ -70,8 +72,6 @@ class DemoViewAnswer: UIView {
         secondLevelSubview.heightAnchor.constraint(equalTo: firstLevelSubview.heightAnchor, multiplier: 0.84).isActive = true
         secondLevelSubview.centerXAnchor.constraint(equalTo: firstLevelSubview.centerXAnchor).isActive = true
         secondLevelSubview.centerYAnchor.constraint(equalTo: firstLevelSubview.centerYAnchor).isActive = true
-        
-        layoutIfNeeded()
     }
     
 }
